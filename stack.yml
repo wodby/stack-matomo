@@ -1,0 +1,50 @@
+name: matomo4
+icon: matomo
+title: Matomo 4
+
+services:
+- name: matomo
+  title: Matomo
+  service: matomo
+  required: true
+  options:
+  - version: 4
+    default: true
+  volumes:
+  - name: files
+    size: 50
+  links:
+  - name: db
+    service: mariadb
+
+- name: nginx
+  title: Nginx
+  service: matomo-nginx
+  required: true
+  links:
+  - name: backend
+    service: matomo
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: mysql-data
+    size: 20
+
+- name: cloud-mariadb
+  title: Cloud MariaDB
+  service: cloud-mariadb
+  disabled: true
+  options:
+  - version: '10.3'
+
+- name: cloud-mysql
+  title: Cloud MySQL
+  service: cloud-mysql
+  disabled: true
+  options:
+  - version: '5.5'
+  - version: '5.6'
+  - version: '5.7'
+  - version: '8'
