@@ -1,15 +1,12 @@
-name: matomo4
+name: matomo
 icon: matomo
-title: Matomo 4
+title: Matomo
 
 services:
 - name: matomo
   title: Matomo
   service: matomo
   required: true
-  options:
-  - version: 4
-    default: true
   volumes:
   - name: files
     size: 50
