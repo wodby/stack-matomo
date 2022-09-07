@@ -16,7 +16,7 @@ services:
 
 - name: nginx
   title: Nginx
-  service: nginx-php
+  service: php-nginx
   required: true
   containers:
   - name: nginx
