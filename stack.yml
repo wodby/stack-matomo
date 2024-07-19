@@ -10,6 +10,8 @@ services:
   links:
   - name: db
     service: mariadb
+  - name: sendmail
+    service: opensmtpd
 
 - name: nginx
   title: Nginx
@@ -30,3 +32,14 @@ services:
   volumes:
   - name: data
     size: 20
+
+- name: opensmtpd
+  required: false
+  title: OpenSMTPD
+  service: opensmtpd
+
+- name: valkey
+  required: false
+  disabled: true
+  title: Valkey
+  service: valkey
