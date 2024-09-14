@@ -15,13 +15,8 @@ services:
 
 - name: nginx
   title: Nginx
-  service: php-nginx
+  service: matomo-nginx
   required: true
-  containers:
-  - name: nginx
-    env:
-    - name: NGINX_VHOST_PRESET
-      value: matomo  
   links:
   - name: backend
     service: matomo
