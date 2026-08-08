@@ -6,6 +6,7 @@ This repository defines the Wodby stack manifests and default service
 composition for Matomo.
 
 - [Browse Wodby application stacks](https://wodby.com/stacks)
+- [Matomo stack guide](https://wodby.com/docs/2.0/stacks/catalog/matomo/)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
 
