@@ -8,19 +8,16 @@ services:
   title: Matomo
   service: matomo
   required: true
+  volumes:
+  - name: files
+    size: 5
   links:
   - name: db
     service: mariadb
+  - name: files
+    service: files-nfs
   - name: sendmail
     service: opensmtpd
-
-- name: nginx
-  title: Nginx
-  service: matomo-nginx
-  required: true
-  links:
-  - name: backend
-    service: matomo
 
 - name: mariadb
   title: MariaDB
@@ -29,13 +26,14 @@ services:
   - name: data
     size: 20
 
+- name: files-nfs
+  title: Files NFS storage
+  service: nfs-provisioner
+  volumes:
+  - name: data
+    size: 10
+
 - name: opensmtpd
   required: false
   title: OpenSMTPD
   service: opensmtpd
-
-- name: valkey
-  required: false
-  disabled: true
-  title: Valkey
-  service: valkey
