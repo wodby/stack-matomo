@@ -2,6 +2,11 @@ name: matomo
 icon: matomo
 docs: https://wodby.com/docs/2.0/stacks/catalog/matomo/
 title: Matomo
+# The main stack of the Matomo variants: the catalog shows this next to the
+# link to it on the variants' pages.
+variantDescription: >-
+  Choose this when you don't need to customize Matomo: it runs the prebuilt
+  Matomo image, with no Git repository to maintain and no builds.
 
 services:
 - name: matomo
